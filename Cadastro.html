@@ -14,13 +14,17 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
             <h2>Cadastro de veiculo</h2>
         </header>
         
-        <section>
-            <div></div>
-            <form name="validationPlaca">
-                <input type="text" placeholder="PLACA" name="placa" id="placa"/>
-                <input type="date" name="Entrada" id="entrada"/>
-                <input type="date" name="Saida" id="saida"/>
-            </form>
-        </section>
+        <form method="post" action="Cadastro.jsp">
+            <input type="text" placeholder="PLACA" name="placa" id="placa"/>
+            
+            <input list="pagamento" name="pag" id="pag">
+            
+            <datalist id="pagamento">
+                <option value="dinheiro">dinheiro</option>
+                <option value="cartao">cartao</option>
+            </datalist>
+
+        </form>
+        
     </body>
 </html>

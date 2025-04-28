@@ -38,8 +38,8 @@
             if(resultado.next()&& opcao.equals("operador")) {
                 String RedirectUrl = "Cadastro.html";
                 response.sendRedirect(RedirectUrl);
-            } else {
-                String redirectURL = "tentar_novamente.html";
+            } else if(resultado.next()&& opcao.equals("operador")) {
+                String redirectURL = "Admin.html";
                 response.sendRedirect(redirectURL);
             }
         %>
