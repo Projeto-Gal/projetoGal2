@@ -16,7 +16,7 @@
         <%
             String user1;
             String senha;
-            String opcoes;
+            String opcao;
             user1 = request.getParameter("email");
             senha = request.getParameter("password");
             opcao = request.getParameter("opcao");
@@ -36,7 +36,8 @@
             ResultSet resultado = st.executeQuery();
             
             if(resultado.next()&& opcao.equals("operador")) {
-                %><p>Olá</p><%
+                String RedirectUrl = "Cadastro.html";
+                response.sendRedirect(RedirectUrl);
             } else {
                 String redirectURL = "tentar_novamente.html";
                 response.sendRedirect(redirectURL);
