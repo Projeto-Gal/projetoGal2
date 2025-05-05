@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="java.sql.*"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -12,8 +13,6 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <%
-            
-        %>
+        <h1>Func</h1>
     </body>
 </html>
