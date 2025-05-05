@@ -29,18 +29,21 @@
             conecta=DriverManager.getConnection(url, user, password);
             
             String sql = "SELECT * FROM funcionario WHERE login=? AND senha=?"
-                    + " AND nivel_acesso='operador'";
+                    + "AND nivel_acesso=?";
             st=conecta.prepareStatement(sql);
             st.setString(1, user1);
             st.setString(2, senha);
+            st.setString(3, opcao);
             ResultSet resultado = st.executeQuery();
             
-            if(resultado.next()&& opcao.equals("operador")) {
-                String RedirectUrl = "Cadastro.html";
-                response.sendRedirect(RedirectUrl);
-            } else if(resultado.next()&& opcao.equals("operador")) {
-                String redirectURL = "Admin.html";
-                response.sendRedirect(redirectURL);
+            if (resultado.next()) {
+                if ("operador".equals(opcao)) {
+                    response.sendRedirect("cadastro.html");
+                } else if ("administrador".equals(opcao)) {
+                    response.sendRedirect("admin.html");
+                }
+            } else {
+                out.println("Login ou senha incorretos.");
             }
         %>
     </body>

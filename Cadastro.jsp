@@ -13,8 +13,6 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <%
-            
-        %>
+        <h1>Func</h1>
     </body>
 </html>
