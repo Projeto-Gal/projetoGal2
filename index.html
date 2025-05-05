@@ -8,23 +8,44 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./style.css">
     </head>
     <body>
-        <form method="post" action="login.jsp">
-            <label for="email">Email</label>
-            <input type="email" name="email" id="email">
+        <section class="login">
+            <header><img src="/Assets/icons/car.svg" alt=""></header>
+        
+            <form method="post" action="login.jsp" class="form-login">
+                <div>
+                    <img src="/Assets/icons/user.svg" alt="">
+                    <input 
+                    placeholder="LOGIN"
+                    type="email" name="email" id="email">
+                </div>
+                
+                <div>
+                    <img src="/Assets/icons/lock.svg" alt="">
+                    <input
+                    placeholder="PASSWORD" type="password" name="password" id="password">
+                </div>
+                
+                <div>
+                    <img src="/Assets/icons/lock.svg" alt="">
+                    <input placeholder="NIVEL DE ACESSO" list="opcoes" name="opcao" id="opcao">
+                 </div>
+                
+                <datalist id="opcoes">
+                    <option value="admin">administrador</option>
+                    <option value="operador">operador</option>
+                </datalist>
+                
+                    <button type="submit">LOGIN</button>
+                    <p>esqueceu a senha?</p>
+                    
             
-            <label for="password">Senha</label>
-            <input type="password" name="password" id="password">
-            
-            <input list="opcoes" name="opcao" id="opcao">
-            
-            <datalist id="opcoes">
-                <option value="admin">administrador</option>
-                <option value="operador">operador</option>
-            </datalist>
-
-            <input type="submit" value="Entrar">
-        </form>
+            </form>
+        </section>
     </body>
 </html>
