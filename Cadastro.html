@@ -8,23 +8,29 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./style.css">
     </head>
     <body>
-        <header>
-            <h2>Cadastro de veiculo</h2>
-        </header>
-        
-        <form method="post" action="Cadastro.jsp">
-            <input type="text" placeholder="PLACA" name="placa" id="placa"/>
-            
-            <input list="pagamento" name="pag" id="pag">
-            
-            <datalist id="pagamento">
-                <option value="dinheiro">dinheiro</option>
-                <option value="cartao">cartao</option>
-            </datalist>
-
-        </form>
+        <section class="cadastro-de-placa">
+            <header >
+                <h2>Cadastro de veiculo</h2>
+            </header>
+            <div>
+            <img src="./Assets//car3d.svg" alt="">
+            <form class="form-cadastro" method="post" action="Cadastro.jsp">
+                <div>
+                <input type="text" placeholder="PLACA" name="placa" id="placa"/>
+                <input list="pagamento" name="pag" id="pag">
+                
+                <datalist id="pagamento">
+                    <option value="cartao">cartao</option>
+                    <option value="dinheiro">dinheiro</option>
+                </datalist>
+            </div>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </section>
         
     </body>
 </html>
