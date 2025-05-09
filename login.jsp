@@ -38,7 +38,7 @@
             
             if (resultado.next()) {
                 if ("operador".equals(opcao)) {
-                    response.sendRedirect("cadastro.html");
+                    response.sendRedirect("envio.html");
                 } else if ("administrador".equals(opcao)) {
                     response.sendRedirect("admin.html");
                 }
