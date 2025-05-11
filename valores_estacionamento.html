@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h2>Editar valores do estacionamento</h2>
+        
+        <form method="post" action="editar_configuracao.jsp">
+            <label for="valor_primeira_hora">Valor da Primeira Hora (R$):</label>
+            <input type="number" step="0.01" name="valor_primeira_hora" required>
+
+            <label for="valor_hora_adicional">Valor da Hora Adicional (R$):</label>
+            <input type="number" step="0.01" name="valor_hora_adicional" required>
+
+            <input type="submit" value="Atualizar">
+        </form>
+    </body>
+</html>

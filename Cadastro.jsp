@@ -24,37 +24,50 @@ try {
 
     try (Connection conecta = DriverManager.getConnection(url, user, password)) {
 
-        // Verificar se a placa é válida
-        if (!matcher.matches()) {
-            out.print("❌ Placa inválida. Use os formatos: ABC1234 ou ABC1D34.");
+    // Contar vagas disponíveis
+    String sqlContar = "SELECT COUNT(*) FROM vaga WHERE status_vaga = 'disponivel'";
+    PreparedStatement contarSt = conecta.prepareStatement(sqlContar);
+    ResultSet contarRs = contarSt.executeQuery();
+    int vagasDisponiveis = 0;
+    if (contarRs.next()) {
+        vagasDisponiveis = contarRs.getInt(1);
+    }
+
+    // Mostrar quantidade de vagas disponíveis antes de prosseguir
+    out.println("🚗 Vagas disponíveis: " + vagasDisponiveis + "<br><br>");
+
+    // Verificar se a placa é válida
+    if (!matcher.matches()) {
+        out.print("❌ Placa inválida. Use os formatos: ABC1234 ou ABC1D34.");
+    } else {
+        // Buscar uma vaga livre
+        String buscaVaga = "SELECT * FROM vaga WHERE status_vaga = 'disponivel' LIMIT 1";
+        PreparedStatement vagaSt = conecta.prepareStatement(buscaVaga);
+        ResultSet vagaRs = vagaSt.executeQuery();
+
+        if (!vagaRs.next()) {
+            out.print("❌ Estacionamento cheio! Todas as vagas estão ocupadas.");
         } else {
-            // Buscar uma vaga livre
-            String buscaVaga = "SELECT * FROM vaga WHERE status_vaga = 'disponivel' LIMIT 1";
-            PreparedStatement vagaSt = conecta.prepareStatement(buscaVaga);
-            ResultSet vagaRs = vagaSt.executeQuery();
+            int vagaId = vagaRs.getInt("id_vaga");
 
-            if (!vagaRs.next()) {
-                out.print("❌ Estacionamento cheio! Todas as vagas estão ocupadas.");
-            } else {
-                int vagaId = vagaRs.getInt("id_vaga");
+            // Inserir veículo com vaga
+            String insertVeiculo = "INSERT INTO veiculo (placa, data_entrada, vaga_id, data_saida) VALUES (?, NOW(), ?, NULL)";
+            PreparedStatement insertSt = conecta.prepareStatement(insertVeiculo);
+            insertSt.setString(1, placa.toUpperCase());
+            insertSt.setInt(2, vagaId);
+            insertSt.execute();
 
-                // Inserir veículo com vaga
-                String insertVeiculo = "INSERT INTO veiculo (placa, data_entrada, vaga_id, data_saida) VALUES (?, NOW(), ?, NULL)";
-                PreparedStatement insertSt = conecta.prepareStatement(insertVeiculo);
-                insertSt.setString(1, placa.toUpperCase());
-                insertSt.setInt(2, vagaId);
-                insertSt.execute();
+            // Atualizar vaga para OCUPADA
+            String ocuparVaga = "UPDATE vaga SET status_vaga = 'ocupada' WHERE id_vaga = ?";
+            PreparedStatement ocupaSt = conecta.prepareStatement(ocuparVaga);
+            ocupaSt.setInt(1, vagaId);
+            ocupaSt.execute();
 
-                // Atualizar vaga para OCUPADA
-                String ocuparVaga = "UPDATE vaga SET status_vaga = 'ocupada' WHERE id_vaga = ?";
-                PreparedStatement ocupaSt = conecta.prepareStatement(ocuparVaga);
-                ocupaSt.setInt(1, vagaId);
-                ocupaSt.execute();
-
-                out.print("✅ Veículo cadastrado com sucesso! Vaga ocupada: " + vagaId);
-            }
+            out.print("✅ Veículo cadastrado com sucesso! Vaga ocupada: " + vagaId);
         }
     }
+}
+
 
 } catch (Exception ex) {
     out.print("Erro: " + ex.getMessage());

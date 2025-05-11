@@ -24,6 +24,22 @@ try {
 
         try (Connection conecta = DriverManager.getConnection(url, user, password)) {
 
+            // Buscar configuração
+            String sqlConf = "SELECT valor_primeira_hora, valor_hora_adicional FROM configuracao LIMIT 1";
+            PreparedStatement confSt = conecta.prepareStatement(sqlConf);
+            ResultSet confRs = confSt.executeQuery();
+
+            double primeiraHora = 0;
+            double horaAdicional = 0;
+
+            if (confRs.next()) {
+                primeiraHora = confRs.getDouble("valor_primeira_hora");
+                horaAdicional = confRs.getDouble("valor_hora_adicional");
+            } else {
+                out.println("❌ Configurações de preços não encontradas.");
+                return;
+            }
+
             // Buscar veículo ativo
             String sqlBusca = "SELECT * FROM veiculo WHERE placa = ? AND data_saida IS NULL";
             PreparedStatement stBusca = conecta.prepareStatement(sqlBusca);
@@ -31,23 +47,19 @@ try {
             ResultSet rs = stBusca.executeQuery();
 
             if (rs.next()) {
-                // Obter a data de entrada e calcular a diferença
                 Timestamp dataEntrada = rs.getTimestamp("data_entrada");
-                Timestamp dataSaida = new Timestamp(System.currentTimeMillis()); // Agora
-                long tempoEstacionado = dataSaida.getTime() - dataEntrada.getTime(); // em milissegundos
+                Timestamp dataSaida = new Timestamp(System.currentTimeMillis());
+                long tempoEstacionado = dataSaida.getTime() - dataEntrada.getTime();
+                double horasEstacionado = Math.ceil((double) tempoEstacionado / (1000 * 60 * 60));
 
-                // Converter tempo de milissegundos para horas
-                long horasEstacionado = tempoEstacionado / (1000 * 60 * 60); // horas completas
-
-                // Calcular o preço
-                double preco = 0;
+                double preco;
                 if (horasEstacionado <= 1) {
-                    preco = 25.0; // 25 reais para 1 hora ou menos
+                    preco = primeiraHora;
                 } else {
-                    preco = 25.0 + (horasEstacionado - 1) * 9.0; // 25 reais para a 1ª hora + 9 reais para cada hora adicional
+                    preco = primeiraHora + (horasEstacionado - 1) * horaAdicional;
                 }
 
-                // Atualizar a saída do veículo e o pagamento
+                // Atualizar saída
                 String sqlSaida = "UPDATE veiculo SET data_saida = NOW(), forma_pagamento = ?, valor_pago = ? WHERE placa = ? AND data_saida IS NULL";
                 PreparedStatement stSaida = conecta.prepareStatement(sqlSaida);
                 stSaida.setString(1, pagamento);
@@ -56,7 +68,6 @@ try {
                 int atualizado = stSaida.executeUpdate();
 
                 if (atualizado > 0) {
-                    // Liberar vaga
                     int vagaId = rs.getInt("vaga_id");
                     String sqlLiberaVaga = "UPDATE vaga SET status_vaga = 'disponivel' WHERE id_vaga = ?";
                     PreparedStatement stVaga = conecta.prepareStatement(sqlLiberaVaga);
@@ -64,7 +75,8 @@ try {
                     stVaga.executeUpdate();
 
                     out.println("✅ Saída registrada e vaga liberada com sucesso!");
-                    out.println("<br>Preço a ser pago: R$ " + preco);
+                    out.println("<br>Tempo estacionado: " + (int)horasEstacionado + "h");
+                    out.println("<br>Preço a ser pago: R$ " + String.format("%.2f", preco));
                 } else {
                     out.println("❌ Erro ao registrar saída.");
                 }
