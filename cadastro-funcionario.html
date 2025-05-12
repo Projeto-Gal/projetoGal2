@@ -1,16 +1,11 @@
 <!DOCTYPE html>
-<!--
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
--->
-<html>
-  <head>
-    <title>TODO supply a title</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-
-     <link
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link
       rel="stylesheet"
       type="text/css"
       href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"
@@ -34,15 +29,16 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
-  </head>
-  <body class="body-admin">
-    <header class="header-admin">
-      <nav>
-        <a href="admin_cadastro_funcionario.html">Dados Funcionários</a>
-        <a href="valores_estacionamento.html">Valores estacionamento</a>
-        <a href="vagas.html">Vagas</a>
-      </nav>
-    </header>
-    <img src="./Assets/personWork.png" alt="">
-  </body>
+</head>
+<body class="body-cadastro-funcionario">
+    <section class="cadastro-funcionario">
+        <header><h2>CADASTRAR</h2></header>
+            <form class="form-cadastro-funcionario" action="cadastro_usuario.jsp" method="post">
+                <input type="text" id="name" name="name" placeholder="Nome:" required>
+                <input type="text" id="email" name="email" placeholder="Email:" required>
+                <input type="password" id="password" name="password" placeholder="Senha:" required>
+                <button type="submit">concluido</button>
+            </form>
+    </section>
+</body>
 </html>

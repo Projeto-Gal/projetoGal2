@@ -1,142 +1,339 @@
 @import url(reset.css);
 @import url(global.css);
 
-body{
-    width: 100vw;
-    height: 100vh;
-    background-color:var(--dark-blue);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.body-login {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--dark-blue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.login{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 47px;
+.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 47px;
 }
 
-.form-login{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+.form-login {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.form-login div{
-    background: transparent;
-    width: 300px;
-    height: 45px;
-    border: 1px solid white;
-    border-radius: 4px;
-    display: flex;
-    align-items: center;
-    
+.form-login div {
+  background: transparent;
+  width: 300px;
+  height: 45px;
+  border: 1px solid white;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
 }
 
-.form-login div img{
-    padding-left: 12px;
+.form-login div img {
+  padding-left: 12px;
 }
 
-.form-login input{
-    background: transparent;
-    border:none;
-    width: 200px;
-    color: white;
-    margin: 0px 0 0px 51px;
+.form-login input {
+  background: transparent;
+  border: none;
+  width: 200px;
+  color: white;
+  margin: 0px 0 0px 51px;
 }
 
-.form-login input:focus{
-    outline: none;
+.form-login input:focus {
+  outline: none;
 }
-.form-login input::placeholder{
-    font-size: 14px;
-    color: white;
-    font-family: "Montserrat", sans-serif;
-    font-weight: 300;
-    width: auto;
-    
+.form-login input::placeholder {
+  font-size: 14px;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  width: auto;
 }
 
-.form-login button{
-    width: 300px;
-    height: 45px;
-    background-color: white;
-    color: var(--dark-blue);
-    border: none;
-    box-shadow: 0 4px 4px rgb(0,0,0,30%);
+.form-login button {
+  width: 300px;
+  height: 45px;
+  background-color: white;
+  color: var(--dark-blue);
+  border: none;
+  box-shadow: 0 4px 4px rgb(0, 0, 0, 30%);
 }
 
 .form-login p {
-    font-size: 16px;
-    font-weight: 500;
-    color: white;
-    font-family: "Montserrat", sans-serif;;
+  font-size: 16px;
+  font-weight: 500;
+  color: white;
+  font-family: "Montserrat", sans-serif;
 }
 
-.cadastro-de-placa{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 47px;
+.form-login nav {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+}
+
+.form-login nav a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: "Montserrat", sans-serif;
+}
+
+.body-cadastro-vagas {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--dark-blue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cadastro-de-placa {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 47px;
 }
 
 .cadastro-de-placa div {
-    display: flex;
-    align-items: center;
-    gap: 265px;
+  display: flex;
+  align-items: center;
+  gap: 265px;
 }
 
-.form-cadastro{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+.form-cadastro {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.form-cadastro div{
+.form-cadastro div {
+  background: transparent;
+  width: 300px;
+  height: 45px;
+  border: 1px solid white;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+}
+
+.form-cadastro div input {
+  background: transparent;
+  border: none;
+  width: 200px;
+  color: white;
+  margin: 0px 0 0px 51px;
+}
+
+.form-cadastro input:focus {
+  outline: none;
+}
+.form-cadastro input::placeholder {
+  font-size: 14px;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  width: auto;
+}
+
+.cadastro-de-placa header h2 {
+  font-family: "Moul", serif;
+  font-weight: 600;
+  font-size: 64px;
+  color: white;
+}
+
+.form-cadastro button {
+  width: 300px;
+  height: 45px;
+  background-color: white;
+  color: var(--dark-blue);
+  border: none;
+  box-shadow: 0 4px 4px rgb(0, 0, 0, 30%);
+}
+
+.body-cadastro-usuario {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--dark-blue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cadastro-usuario {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 47px;
+}
+
+.cadastro-usuario header h2 {
+  font-family: "Monteserat", serif;
+  font-weight: 600;
+  font-size: 64px;
+  color: white;
+}
+
+.form-cadastro-usuario {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-cadastro-usuario div {
+  background: transparent;
+  width: 300px;
+  height: 45px;
+  border: 1px solid white;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+}
+
+.form-cadastro-usuario div i {
+  padding-left: 12px;
+  color: white;
+  font-size: 20px;
+}
+
+.form-cadastro-usuario input {
+  background: transparent;
+  border: none;
+  width: 200px;
+  color: white;
+  margin: 0px 0 0px 51px;
+}
+
+.form-cadastro-usuario input:focus {
+  outline: none;
+}
+.form-cadastro-usuario input::placeholder {
+  font-size: 14px;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  width: auto;
+}
+
+.form-cadastro-usuario button {
+  width: 300px;
+  height: 45px;
+  background-color: white;
+  color: var(--dark-blue);
+  border: none;
+  box-shadow: 0 4px 4px rgb(0, 0, 0, 30%);
+}
+
+.form-cadastro-usuario a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: "Montserrat", sans-serif;
+}
+
+.body-admin {
+  background-color: var(--dark-blue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.header-admin {
+  display: flex;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  padding: 25px 0;
+}
+
+.header-admin nav {
+  display: flex;
+  background-color: rgb(255, 252, 252, 89%);
+  justify-content: space-between;
+  border-radius: 38px;
+}
+
+.header-admin nav a {
+  text-decoration: none;
+  color: black;
+  font-size: 32px;
+  font-weight: 500;
+  font-family: "Moul", sans-serif;
+  padding: 10px 20px 10px 20px;
+}
+
+.body-cadastro-funcionario {
+  background-color: var(--dark-blue);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.cadastro-funcionario{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 33px;
+}
+
+.cadastro-funcionario header h2 {
+  font-family: "Moul", serif;
+  font-weight: 400;
+  font-size: 64px;
+  color: white;
+}
+
+.form-cadastro-funcionario {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 600px;
+  background-color: white;
+  max-height: 552px;
+  border-radius: 21px;
+  padding: 23px 93px 0px 93px;
+  gap: 30px;
+}
+
+.form-cadastro-funcionario input{
     background: transparent;
-    width: 300px;
-    height: 45px;
-    border: 1px solid white;
-    border-radius: 4px;
-    display: flex;
-    align-items: center;
-    
-}
-
-
-.form-cadastro div input{
-    background: transparent;
-    border:none;
-    width: 200px;
-    color: white;
-    margin: 0px 0 0px 51px;
-}
-
-.form-cadastro input:focus{
-    outline: none;
-}
-.form-cadastro input::placeholder{
-    font-size: 14px;
-    color: white;
-    font-family: "Montserrat", sans-serif;
-    font-weight: 300;
-    width: auto;
-    
-}
-
-.cadastro-de-placa header h2{
-    font-family: "Moul", serif;
-    font-weight: 600;
-    font-size: 64px;
-    color: white;
-}
-
-.form-cadastro button{
-    width: 300px;
-    height: 45px;
-    background-color: white;
-    color: var(--dark-blue);
     border: none;
-    box-shadow: 0 4px 4px rgb(0,0,0,30%);
+    height: 56px;
+    width: 100%;
+    border-bottom:1px solid black ;
+    color: black;
+
+}
+
+.form-cadastro-funcionario input::placeholder {
+    font-size: 24px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.form-cadastro-funcionario button {
+  width: 401px;
+  height: 69px;
+  background-color: #1979FF;
+  color: white;
+  border: none;
+  font-size: 32px;
+  border-radius: 16px;
+  margin-bottom: 41px;
+  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
+
 }

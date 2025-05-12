@@ -4,23 +4,66 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to c
 Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
 -->
 <html>
-    <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <form method="post" action="cadastro_usuario.jsp">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name">
-            
-            <label for="email">Email</label>
-            <input type="text" id="email" name="email">
-            
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password">
-            
-            <input type="submit" value="Cadastrar">
-        </form>
-    </body>
+  <head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Moul&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="body-cadastro-usuario">
+    <section class="cadastro-usuario">
+      <header><h2>Cadastro de usuário</h2></header>
+      <form
+        class="form-cadastro-usuario"
+        method="post"
+        action="cadastro_usuario.jsp"
+      >
+        <div>
+          <i class="ph ph-user"></i>
+          <input placeholder="NOME" type="text" id="name" name="name" />
+        </div>
+
+        <div>
+          <i class="ph ph-envelope"></i>
+          <input placeholder="EMAIL" type="text" id="email" name="email" />
+        </div>
+
+        <div>
+          <i class="ph ph-lock"></i>
+          <input
+            placeholder="PASSWORD"
+            type="password"
+            id="password"
+            name="password"
+          />
+        </div>
+        <button type="submit">Enviar</button>
+        <a href="index.html">Login</a>
+      </form>
+    </section>
+  </body>
 </html>

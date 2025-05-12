@@ -36,7 +36,7 @@
 </head>
 <body>
 
-<h2>📋 Veículos que já saíram do estacionamento</h2>
+<h2>Veículos que já saíram do estacionamento</h2>
 
 <%
 try {
