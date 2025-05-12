@@ -4,14 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <link
+     rel="stylesheet"
+     type="text/css"
+     href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"
+   />
+   <link
+     rel="stylesheet"
+     type="text/css"
+     href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css"
+   />
+
+   <link rel="preconnect" href="https://fonts.googleapis.com" />
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+   <link
+     href="https://fonts.googleapis.com/css2?family=Moul&display=swap"
+     rel="stylesheet"
+   />
+
+   <link rel="preconnect" href="https://fonts.googleapis.com" />
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+   <link
+     href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+     rel="stylesheet"
+   />
 </head>
-<body>
-     <header><h2>Editar Funcionário</h2></header>
-        <form action="editar_funcionario.jsp" method="post">
-            <input type="text" name="id" placeholder="ID do Funcionário" required>
-            <input type="text" name="nome" placeholder="Novo Nome">
-            <input type="text" name="usuario" placeholder="Email">
-            <input type="password" name="senha" placeholder="Nova Senha">
+<body class="body-editar-funcionario">
+     <header>
+        <h2>Editar Funcionario</h2>
+    </header>
+        <form class="form-editar-funcionario" action="editar_funcionario.jsp" method="post">
+            <div>
+                <i class="ph ph-user"></i>
+                <input type="text" name="nome" placeholder="Novo Nome">
+            </div>
+
+            <div>
+                <i class="ph ph-envelope"></i>
+                <input type="text" name="usuario" placeholder="Email">
+            </div>
+
+            <div>
+                <i class="ph ph-lock"></i>
+                <input type="password" name="senha" placeholder="Nova Senha">
+            </div>
+
             <button type="submit">Editar</button>
         </form>
 </body>

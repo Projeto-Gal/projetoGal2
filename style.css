@@ -95,11 +95,26 @@
   align-items: center;
 }
 
+.body-cadastro-de-placa {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--dark-blue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .cadastro-de-placa {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 47px;
+}
+
+.cadastro-de-placa header h2 {
+  font-size: 64px;
+  font-family: "Moul", sans-serif;
+  font-weight: 400;
 }
 
 .cadastro-de-placa div {
@@ -282,7 +297,7 @@
   flex-direction: column;
 }
 
-.cadastro-funcionario{
+.cadastro-funcionario {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -309,31 +324,268 @@
   gap: 30px;
 }
 
-.form-cadastro-funcionario input{
-    background: transparent;
-    border: none;
-    height: 56px;
-    width: 100%;
-    border-bottom:1px solid black ;
-    color: black;
-
+.form-cadastro-funcionario input {
+  background: transparent;
+  border: none;
+  height: 56px;
+  width: 100%;
+  border-bottom: 1px solid black;
+  color: black;
 }
 
 .form-cadastro-funcionario input::placeholder {
-    font-size: 24px;
-    font-family: 'Montserrat', sans-serif;
+  font-size: 24px;
+  font-family: "Montserrat", sans-serif;
 }
 
 .form-cadastro-funcionario button {
   width: 401px;
   height: 69px;
-  background-color: #1979FF;
+  background-color: #1979ff;
   color: white;
   border: none;
   font-size: 32px;
   border-radius: 16px;
   margin-bottom: 41px;
   font-weight: 600;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
+}
 
+.body-deletar-funcionario {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--dark-blue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.body-deletar-funcionario header h2 {
+  font-weight: 400;
+  font-size: 64px;
+  color: white;
+}
+
+.form-deletar-funcionario {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 600px;
+  gap: 30px;
+}
+
+.form-deletar-funcionario div {
+  background: transparent;
+  width: 300px;
+  height: 45px;
+  border: 1px solid white;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+}
+
+.form-deletar-funcionario div i {
+  padding-left: 12px;
+  color: white;
+  font-size: 20px;
+}
+
+.form-deletar-funcionario input {
+  background: transparent;
+  border: none;
+  width: 200px;
+  color: white;
+  margin: 0px 0 0px 51px;
+}
+
+.form-deletar-funcionario input:focus {
+  outline: none;
+}
+.form-deletar-funcionario input::placeholder {
+  font-size: 14px;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  width: auto;
+}
+
+.form-deletar-funcionario button {
+  width: 300px;
+  height: 45px;
+  background-color: white;
+  color: var(--dark-blue);
+  border: none;
+  box-shadow: 0 4px 4px rgb(0, 0, 0, 30%);
+}
+
+.body-editar-funcionario {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--dark-blue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.body-editar-funcionario header h2 {
+  font-family: "Moul", serif;
+  font-weight: 400;
+  font-size: 64px;
+  color: white;
+}
+
+.form-editar-funcionario {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 600px;
+  gap: 30px;
+}
+
+.form-editar-funcionario div {
+  background: transparent;
+  width: 300px;
+  height: 45px;
+  border: 1px solid white;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+}
+
+.form-editar-funcionario div i {
+  padding-left: 12px;
+  color: white;
+  font-size: 20px;
+}
+
+.form-editar-funcionario input {
+  background: transparent;
+  border: none;
+  width: 200px;
+  color: white;
+  margin: 0px 0 0px 51px;
+}
+
+.form-editar-funcionario input:focus {
+  outline: none;
+}
+.form-editar-funcionario input::placeholder {
+  font-size: 14px;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  width: auto;
+}
+
+.form-editar-funcionario button {
+  width: 300px;
+  height: 45px;
+  background-color: white;
+  color: var(--dark-blue);
+  border: none;
+  box-shadow: 0 4px 4px rgb(0, 0, 0, 30%);
+}
+
+.body-cadastro-veiculo {
+  display: flex;
+  width: 100%;
+  background-color: var(--dark-blue);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.body-cadastro-veiculo header {
+  padding: 25px 0;
+}
+
+.body-cadastro-veiculo header nav {
+  display: flex;
+  background-color: rgb(255, 252, 252, 89%);
+  justify-content: space-between;
+  border-radius: 38px;
+  gap: 50px;
+}
+
+.body-cadastro-veiculo nav a {
+  text-decoration: none;
+  color: black;
+  font-size: 32px;
+  font-weight: 500;
+  font-family: "Moul", sans-serif;
+  padding: 10px 20px 10px 20px;
+}
+
+.body-cadastro-veiculo img {
+  transform: rotate(90deg);
+  width: 500px;
+  margin-left: 100px;
+}
+
+.body-excluir-vagas {
+  display: flex;
+  width: 100%;
+  background-color: var(--dark-blue);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 150px;
+}
+
+.body-excluir-vagas header h2 {
+  font-family: "Moul", serif;
+  font-weight: 400;
+  font-size: 64px;
+  color: white;
+  width: 600px;
+  text-align: center;
+}
+
+.form-excluir-vagas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  width: 600px;
+}
+
+.form-excluir-vagas div label {
+  font-size: 20px;
+  color: white;
+}
+
+.form-excluir-vagas div input {
+  background: transparent;
+  border: none;
+  width: 50px;
+  color: white;
+  border-bottom: 1px solid white;
+}
+
+.form-excluir-vagas div input:focus {
+  outline: none;
+}
+
+.form-excluir-vagas button {
+  width: 300px;
+  height: 45px;
+  background-color: white;
+  color: var(--dark-blue);
+  border: none;
+  box-shadow: 0 4px 4px rgb(0, 0, 0, 30%);
+}
+
+.body-excluir-veiculos{
+  display: flex;
+  width: 100%;
+  background-color: var(--dark-blue);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
