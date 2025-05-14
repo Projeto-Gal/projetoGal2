@@ -40,14 +40,15 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
             <h2>Excluir veiculo</h2>
         </header>
         <form class="excluir-veiculos" method="post"action="excluir_veiculo.jsp">
+          <div>
             <input type="text" placeholder="PLACA" name="placa" id="placa"/>
-            <select aria-placeholder="selecione" name="pagamento" id="pagamento" required>
+            <select name="pagamento" id="pagamento" required>
                     <option value="">Selecione</option>
                     <option value="dinheiro">Dinheiro</option>
                     <option value="cartao">Cartão</option>
             </select>
-            
-            <input type="submit" value="Enviar">
+          </div>  
+            <button type="submit">Enviar</button>
         </form>
     </body>
 </html>

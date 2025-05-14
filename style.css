@@ -87,12 +87,109 @@
 }
 
 .body-cadastro-vagas {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   background-color: var(--dark-blue);
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+}
+
+.body-cadastro-vagas header {
+  padding: 25px 0;
+}
+.body-cadastro-vagas header h2 {
+  font-family: "Moul", serif;
+  font-weight: 400;
+  font-size: 64px;
+  color: white;
+
+    @media (max-width: 500px) {
+    font-size: 32px;
+  }
+}
+
+.form-cadastro-vagas{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 600px;
+  background-color: white;
+  height: 352px;
+  border-radius: 21px;
+  padding: 93px 93px 0px 93px;
+  gap: 30px;
+
+  @media (max-width: 768px) {
+    width: 600px;
+    padding: 93px 0px;
+    gap: 20px;
+  }
+
+    @media (max-width: 500px) {
+    width: 350px;
+    text-align: center;
+    padding: 93px 40px;
+  }
+
+    @media (max-width: 320px) {
+    width: 250px;
+    text-align: center;
+    padding: 93px 10px;
+    gap: 40px;
+  }
+}
+
+.form-cadastro-vagas label {
+ font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  color: black;
+
+   @media (max-width: 768px) {
+    font-size: 24px;
+  }
+   @media (max-width: 500px) {
+    font-size: 18px;
+  }
+
+}
+
+.form-cadastro-vagas input {
+  background: transparent;
+  border: none;
+  width: 50px;
+  color: black;
+  border-bottom: 2px solid black;
+}
+
+.form-cadastro-vagas input:focus {
+  outline: none;
+}
+.form-cadastro-vagas input::placeholder {
+  font-size: 14px;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  width: auto;
+}
+
+.form-cadastro-vagas button {
+ width: 301px;
+  height: 69px;
+  background-color: #1979ff;
+  color: white;
+  border: none;
+  font-size: 24px;
+  border-radius: 16px;
+  margin-bottom: 41px;
+  font-weight: 600;
+  font-family: "Montserrat", sans-serif;
+
+     @media (max-width: 500px) {
+      font-size: 20px;
+      width: 201px;
+  }
 }
 
 .body-cadastro-de-placa {
@@ -111,16 +208,53 @@
   gap: 47px;
 }
 
-.cadastro-de-placa header h2 {
-  font-size: 64px;
-  font-family: "Moul", sans-serif;
-  font-weight: 400;
+.cadastro-de-placa header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  @media (max-width: 320px) {
+      margin-top: 80px; 
+    }
 }
+
+.cadastro-de-placa header h2 {
+  font-family: "Moul", serif;
+  font-weight: 600;
+  font-size: 64px;
+  color: white;
+  @media (max-width: 500px) {
+      font-size: 36px;
+    }
+
+    @media (max-width: 320px) {
+      font-size: 26px;
+    }
+}
+
 
 .cadastro-de-placa div {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 265px;
+
+   @media (max-width: 900px) {
+      gap: 100px;
+  }
+
+   @media (max-width: 500px) {
+      flex-direction: column-reverse;
+      gap: 30px;
+  }
+}
+
+.cadastro-de-placa div img {
+  @media (max-width: 500px) {
+      width: 200px;
+      rotate: 90deg;
+      margin-left: 50px;
+  }
 }
 
 .form-cadastro {
@@ -158,12 +292,7 @@
   width: auto;
 }
 
-.cadastro-de-placa header h2 {
-  font-family: "Moul", serif;
-  font-weight: 600;
-  font-size: 64px;
-  color: white;
-}
+
 
 .form-cadastro button {
   width: 300px;
@@ -183,18 +312,23 @@
   align-items: center;
 }
 
-.cadastro-usuario {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 47px;
-}
+
 
 .cadastro-usuario header h2 {
   font-family: "Monteserat", serif;
   font-weight: 600;
   font-size: 64px;
   color: white;
+
+  @media (max-width: 500px) {
+      font-size: 36px;
+      padding: 10px 15px;
+    }
+
+     @media (max-width: 320px) {
+      font-size: 26px;
+      padding: 10px 15px;
+    }
 }
 
 .form-cadastro-usuario {
@@ -265,7 +399,7 @@
 
 .header-admin {
   display: flex;
-  width: 100vw;
+  width: 100%;
   justify-content: center;
   align-items: center;
   padding: 25px 0;
@@ -273,8 +407,9 @@
 
 .header-admin nav {
   display: flex;
+  width: 100%;
   background-color: rgb(255, 252, 252, 89%);
-  justify-content: space-between;
+  justify-content: space-around;
   border-radius: 38px;
 }
 
@@ -285,11 +420,38 @@
   font-weight: 500;
   font-family: "Moul", sans-serif;
   padding: 10px 20px 10px 20px;
-}
+
+    @media (max-width: 768px) {
+      font-size: 28px;
+      padding: 15px 25px;
+    }
+
+    @media (max-width: 500px) {
+      font-size: 14px;
+      padding: 10px 15px;
+    }
+  }
+
+  .section-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .section-img img {
+    @media (max-width: 768px) {
+      width: 700px;
+    }
+
+    
+  }
 
 .body-cadastro-funcionario {
   background-color: var(--dark-blue);
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -309,19 +471,34 @@
   font-weight: 400;
   font-size: 64px;
   color: white;
+  
+ @media (max-width: 500px) {
+      font-size: 42px;
+      margin-top: 30px;
+    }
 }
 
 .form-cadastro-funcionario {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
   width: 600px;
   background-color: white;
   max-height: 552px;
   border-radius: 21px;
   padding: 23px 93px 0px 93px;
   gap: 30px;
+
+  @media (max-width: 500px) {
+      width: 450px;
+    }
+
+     @media (max-width: 320px) {
+      text-align: center;
+      width: 270px;
+      padding: 23px 10px;
+
+    }
 }
 
 .form-cadastro-funcionario input {
@@ -349,6 +526,14 @@
   margin-bottom: 41px;
   font-weight: 600;
   font-family: "Montserrat", sans-serif;
+
+   @media (max-width: 500px) {
+      width: 201px;
+    }
+
+     @media (max-width: 320px) {
+      width: 201px;
+    }
 }
 
 .body-deletar-funcionario {
@@ -372,7 +557,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
   width: 600px;
   gap: 30px;
 }
@@ -443,7 +627,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
   width: 600px;
   gap: 30px;
 }
@@ -584,8 +767,165 @@
 .body-excluir-veiculos{
   display: flex;
   width: 100%;
+  height: 100vh;
   background-color: var(--dark-blue);
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
+
+.body-excluir-veiculos header h2{
+  font-family: "Moul", serif;
+  font-weight: 400;
+  font-size: 64px;
+  color: white;
+  width: 600px;
+  text-align: center;
+}
+
+.excluir-veiculos{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  width: 600px;
+}
+
+.excluir-veiculos div input {
+  background: transparent;
+  border: none;
+  width: 200px;
+  color: white;
+  border-bottom: 1px solid white;
+}
+
+.excluir-veiculos div input::placeholder {
+  font-size: 14px;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  width: auto;
+}
+
+.excluir-veiculos div input:focus {
+  outline: none;
+}
+
+.excluir-veiculos div select{
+  background-color: white;
+  color: var(--dark-blue);
+  border: none;
+
+}
+
+.excluir-veiculos button {
+  width: 300px;
+  height: 45px;
+  background-color: white;
+  color: var(--dark-blue);
+  border: none;
+  box-shadow: 0 4px 4px rgb(0, 0, 0, 30%);
+}
+
+.body-vagas{
+  display: flex;
+  width: 100%;
+  background-color: var(--dark-blue);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.body-vagas header {
+  padding: 25px 0;
+}
+
+.body-vagas header nav {
+  display: flex;
+  background-color: rgb(255, 252, 252, 89%);
+  justify-content: space-between;
+  border-radius: 38px;
+  gap: 50px;
+}
+
+.body-vagas nav a {
+  text-decoration: none;
+  color: black;
+  font-size: 32px;
+  font-weight: 500;
+  font-family: "Moul", sans-serif;
+  padding: 10px 20px 10px 20px;
+}
+
+.body-valores{
+  display: flex;
+  width: 100%;
+  background-color: var(--dark-blue);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.body-valores header h2 {
+  font-family: "Moul", serif;
+  font-weight: 400;
+  font-size: 64px;
+  color: white;
+}
+
+.section-valores {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-valores {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 600px;
+  background-color: white;
+  height: 352px;
+  border-radius: 21px;
+  padding: 80px 93px 0px 93px;
+  gap: 30px;
+}
+
+.form-valores div input {
+  background: transparent;
+  border: none;
+  width: 80px;
+  border-bottom: 1px solid black;
+  color: black;
+  margin-left: 10px;
+}
+
+.form-valores div input:focus {
+  outline: none;
+}
+
+.form-valores div label{
+  font-size: 20px;
+  font-family: "Montserrat",sans-serif;
+} 
+
+.form-valores div input::placeholder {
+  font-size: 24px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.form-valores button {
+  width: 401px;
+  height: 69px;
+  background-color: #1979ff;
+  color: white;
+  border: none;
+  font-size: 32px;
+  border-radius: 16px;
+  margin-bottom: 41px;
+  font-weight: 600;
+  font-family: "Montserrat", sans-serif;
+}
+
